@@ -3,8 +3,8 @@
 let hacker1 = "Sam"
 let hacker2 = "Brave"
 
-console.log(`Yhe driver's name is ${hacker1}`)
-console.log(`Yhe navigators's name is ${hacker2}`)
+console.log(`The driver's name is ${hacker1}`);
+console.log(`The navigators's name is ${hacker2}`);
 
 
 // Iteration 2: Conditionals
@@ -36,28 +36,50 @@ for(let i = 0; i < hacker1.length; i++){
 
 console.log(chars);
 
-for (let j = hacker1.length-1; j >= 0; j--){
+for (let j = hacker2.length-1; j >= 0; j--){
     
-    reversed += hacker1[j];
+    reversed += hacker2[j];
 }
 
 console.log(reversed)
 
 let char = "abcdefghijklmnopqrstuvwxyz"
+let decided = false;
 
-if(char.indexOf(hacker1[0].toLocaleLowerCase()) > char.indexOf(hacker2[0].toLocaleLowerCase())){
-   
-    console.log("Yo, the navigator goes first, definitely")
+for(let i = 0; (i < hacker1.length) && (i < hacker2.length); i++){
 
-}else if(char.indexOf(hacker1[0].toLocaleLowerCase()) < char.indexOf(hacker2[0].toLocaleLowerCase())){
-   
-    console.log("The driver's name goes first.")
+    if(char.indexOf(hacker1[i].toLocaleLowerCase()) > char.indexOf(hacker2[i].toLocaleLowerCase())){
+       
+        console.log("Yo, the navigator goes first, definitely.")
+        decided = true;
+        break;
     
-}else{
-   
-    console.log("What?! You both have the same name?")
+    }else if(char.indexOf(hacker1[i].toLocaleLowerCase()) < char.indexOf(hacker2[i].toLocaleLowerCase())){
+       
+        console.log("The driver's name goes first.")
+        decided = true;
+        break;
+        
+    }else{
+       
+        continue;
+    
+    }
 
 }
+
+if(decided === false){
+    if(hacker1.length === hacker2.length){
+
+        console.log("What?! You both have the same name?")
+    }else if(hacker1.length < hacker2.length){
+
+        console.log("The driver's name goes first.")
+    }else{
+        console.log("Yo, the navigator goes first, definitely.")
+    }
+}
+
 
 // BONUS 1
 
