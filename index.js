@@ -48,13 +48,13 @@ let decided = false;
 
 for(let i = 0; (i < hacker1.length) && (i < hacker2.length); i++){
 
-    if(char.indexOf(hacker1[i].toLocaleLowerCase()) > char.indexOf(hacker2[i].toLocaleLowerCase())){
+    if(char.indexOf(hacker1[i].toLowerCase()) > char.indexOf(hacker2[i].toLowerCase())){
        
         console.log("Yo, the navigator goes first, definitely.")
         decided = true;
         break;
     
-    }else if(char.indexOf(hacker1[i].toLocaleLowerCase()) < char.indexOf(hacker2[i].toLocaleLowerCase())){
+    }else if(char.indexOf(hacker1[i].toLowerCase()) < char.indexOf(hacker2[i].toLowerCase())){
        
         console.log("The driver's name goes first.")
         decided = true;
@@ -89,10 +89,6 @@ Pellentesque fringilla erat ex, quis feugiat enim elementum in. Cras nec ex quis
 
 let wordCount = 0;
 let et = 0;
-
-if (longText.length > 0){
-  wordCount = 1;
-}
 
 for (let i = 0; i < longText.length; i++){
   if ((longText[i] !== " " && longText[i] !== "\n") && (longText[i-1] === "\n" || longText[i-1] === " ")){
