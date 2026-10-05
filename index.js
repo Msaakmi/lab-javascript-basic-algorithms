@@ -77,13 +77,46 @@ for (let i = 0; i < longText.length; i++){
     wordCount++;
   }
 
-  // BONUS 2
 
   if((longText[i-1] === " " || longText[i-1] === "\n" || i === 0 ) && longText[i] === "e" && longText[i+1] === "t" && (longText[i+2] === " " || longText[i+2] === "." || longText[i+2] === "," || longText[i+2] === "\n")){
     et++
   }
 }
 
+// BONUS 2
+
+let phraseToCheck = "No 'x' in Nixon";
+ 
+// Your code here
+let cleanPhrase = "";
+let isPalindrome = true;
+let reversedPhrase = "";
+
+phraseToCheck = phraseToCheck.toLowerCase()
+
+for (let i = 0; i < phraseToCheck.length; i++){
+    
+    if(phraseToCheck[i] === " " || phraseToCheck[i] === "." || phraseToCheck[i] === "," || phraseToCheck[i] === "!" || phraseToCheck[i] === "?" || phraseToCheck[i] === "'" ){
+        continue;
+    }else{
+        cleanPhrase += phraseToCheck[i];
+    
+    }
+
+}
+
+for(let i = cleanPhrase.length-1; i >= 0; i--){
+
+    reversedPhrase += cleanPhrase[i];
+
+}
+
+if(cleanPhrase !== reversedPhrase){
+    isPalindrome = false;
+}
+
+
 
 console.log(`El texto tiene ${wordCount} palabras`);
 console.log(`El texto tiene ${et} "et"`);
+console.log(isPalindrome); 
